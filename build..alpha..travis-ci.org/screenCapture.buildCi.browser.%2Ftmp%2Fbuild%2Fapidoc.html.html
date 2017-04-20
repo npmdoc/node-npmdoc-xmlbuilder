@@ -5364,21 +5364,21 @@ XMLDocumentCB.prototype.n = function(name, attributes, text) {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        value = '(' + value.join(',') + ')';
-      }
-      this.name = this.stringify.eleName(name);
-      this.value = this.stringify.dtdElementValue(value);
-    }
+  return this;
+};
 
-    XMLDTDElement.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdElement</span>(this);
-    };
+XMLDocumentCB.prototype.dtdElement = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDElement(this, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdElement</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDElement;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.attList = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDAttList(this, elementName, attributeName, attributeType, defaultValueType, defaultValue);
 ...</pre></li>
     </ul>
 
@@ -8033,21 +8033,21 @@ return XMLDocument;
   return this.stream.write('&gt;' + this.endline(node));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      this.attributeName = this.stringify.attName(attributeName);
-      this.attributeType = this.stringify.dtdAttType(attributeType);
-      this.defaultValue = this.stringify.dtdAttDefault(defaultValue);
-      this.defaultValueType = defaultValueType;
-    }
+  return this;
+};
 
-    XMLDTDAttList.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdAttList</span>(this);
-    };
+XMLDocumentCB.prototype.attList = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDAttList(this, elementName, attributeName, attributeType, defaultValueType, defaultValue);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdAttList</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDAttList;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.entity = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDEntity(this, false, name, value);
 ...</pre></li>
     </ul>
 
@@ -8064,21 +8064,21 @@ return XMLDocument;
   return this.stream.write(this.space(level) + '&lt;!ELEMENT ' + node.name + ' ' + node.value + '&gt;' + this.endline(node));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        value = '(' + value.join(',') + ')';
-      }
-      this.name = this.stringify.eleName(name);
-      this.value = this.stringify.dtdElementValue(value);
-    }
+  return this;
+};
 
-    XMLDTDElement.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdElement</span>(this);
-    };
+XMLDocumentCB.prototype.dtdElement = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDElement(this, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdElement</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDElement;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.attList = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDAttList(this, elementName, attributeName, attributeType, defaultValueType, defaultValue);
 ...</pre></li>
     </ul>
 
@@ -8112,21 +8112,21 @@ return XMLDocument;
   return this.stream.write('&gt;' + this.endline(node));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        if (this.pe &amp;&amp; this.nData) {
-          throw new Error("Notation declaration is not allowed in a parameter entity");
-        }
-      }
-    }
+  return this;
+};
 
-    XMLDTDEntity.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdEntity</span>(this);
-    };
+XMLDocumentCB.prototype.entity = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDEntity(this, false, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdEntity</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDEntity;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.pEntity = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDEntity(this, true, name, value);
 ...</pre></li>
     </ul>
 
@@ -8151,21 +8151,21 @@ return XMLDocument;
   return this.stream.write('&gt;' + this.endline(node));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      }
-      if (value.sysID != null) {
-        this.sysID = this.stringify.dtdSysID(value.sysID);
-      }
-    }
+  return this;
+};
 
-    XMLDTDNotation.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdNotation</span>(this);
-    };
+XMLDocumentCB.prototype.notation = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDNotation(this, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdNotation</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDNotation;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.up = function() {
+  if (this.currentLevel &lt; 0) {
+    throw new Error("The document node has no parent");
+  }
 ...</pre></li>
     </ul>
 
@@ -8746,21 +8746,21 @@ return XMLDocument;
   return r;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      this.attributeName = this.stringify.attName(attributeName);
-      this.attributeType = this.stringify.dtdAttType(attributeType);
-      this.defaultValue = this.stringify.dtdAttDefault(defaultValue);
-      this.defaultValueType = defaultValueType;
-    }
+  return this;
+};
 
-    XMLDTDAttList.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdAttList</span>(this);
-    };
+XMLDocumentCB.prototype.attList = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDAttList(this, elementName, attributeName, attributeType, defaultValueType, defaultValue);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdAttList</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDAttList;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.entity = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDEntity(this, false, name, value);
 ...</pre></li>
     </ul>
 
@@ -8777,21 +8777,21 @@ return XMLDocument;
   return this.space(level) + '&lt;!ELEMENT ' + node.name + ' ' + node.value + '&gt;' + this.newline;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        value = '(' + value.join(',') + ')';
-      }
-      this.name = this.stringify.eleName(name);
-      this.value = this.stringify.dtdElementValue(value);
-    }
+  return this;
+};
 
-    XMLDTDElement.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdElement</span>(this);
-    };
+XMLDocumentCB.prototype.dtdElement = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDElement(this, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdElement</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDElement;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.attList = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDAttList(this, elementName, attributeName, attributeType, defaultValueType, defaultValue);
 ...</pre></li>
     </ul>
 
@@ -8827,21 +8827,21 @@ return XMLDocument;
   return r;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        if (this.pe &amp;&amp; this.nData) {
-          throw new Error("Notation declaration is not allowed in a parameter entity");
-        }
-      }
-    }
+  return this;
+};
 
-    XMLDTDEntity.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdEntity</span>(this);
-    };
+XMLDocumentCB.prototype.entity = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDEntity(this, false, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdEntity</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDEntity;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.pEntity = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDEntity(this, true, name, value);
 ...</pre></li>
     </ul>
 
@@ -8868,21 +8868,21 @@ return XMLDocument;
   return r;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      }
-      if (value.sysID != null) {
-        this.sysID = this.stringify.dtdSysID(value.sysID);
-      }
-    }
+  return this;
+};
 
-    XMLDTDNotation.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">dtdNotation</span>(this);
-    };
+XMLDocumentCB.prototype.notation = function(name, value) {
+  var node;
+  this.openCurrent();
+  node = new XMLDTDNotation(this, name, value);
+  this.onData(this.writer.<span class="apidocCodeKeywordSpan">dtdNotation</span>(node, this.currentLevel + 1));
+  return this;
+};
 
-    return XMLDTDNotation;
-
-  })(XMLNode);
-
-}).call(this);
+XMLDocumentCB.prototype.up = function() {
+  if (this.currentLevel &lt; 0) {
+    throw new Error("The document node has no parent");
+  }
 ...</pre></li>
     </ul>
 
@@ -9573,21 +9573,21 @@ if (!isObject(value)) {
   return '' + val || '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-if (!value.pubID &amp;&amp; !value.sysID) {
-  throw new Error("Public and/or system identifiers are required for an external entity");
+  if (isObject(pubID)) {
+    ref = pubID, pubID = ref.pubID, sysID = ref.sysID;
+  }
+  if (sysID == null) {
+    ref1 = [pubID, sysID], sysID = ref1[0], pubID = ref1[1];
+  }
+  if (pubID != null) {
+    this.pubID = this.stringify.<span class="apidocCodeKeywordSpan">dtdPubID</span>(pubID);
+  }
+  if (sysID != null) {
+    this.sysID = this.stringify.dtdSysID(sysID);
+  }
 }
-if (value.pubID &amp;&amp; !value.sysID) {
-  throw new Error("System identifier is required for a public external entity");
-}
-if (value.pubID != null) {
-  this.pubID = this.stringify.<span class="apidocCodeKeywordSpan">dtdPubID</span>(value.pubID);
-}
-if (value.sysID != null) {
-  this.sysID = this.stringify.dtdSysID(value.sysID);
-}
-if (value.nData != null) {
-  this.nData = this.stringify.dtdNData(value.nData);
-}
+
+XMLDocType.prototype.element = function(name, value) {
 ...</pre></li>
     </ul>
 
@@ -9604,21 +9604,21 @@ if (value.nData != null) {
   return '' + val || '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-if (value.pubID &amp;&amp; !value.sysID) {
-  throw new Error("System identifier is required for a public external entity");
+  if (sysID == null) {
+    ref1 = [pubID, sysID], sysID = ref1[0], pubID = ref1[1];
+  }
+  if (pubID != null) {
+    this.pubID = this.stringify.dtdPubID(pubID);
+  }
+  if (sysID != null) {
+    this.sysID = this.stringify.<span class="apidocCodeKeywordSpan">dtdSysID</span>(sysID);
+  }
 }
-if (value.pubID != null) {
-  this.pubID = this.stringify.dtdPubID(value.pubID);
-}
-if (value.sysID != null) {
-  this.sysID = this.stringify.<span class="apidocCodeKeywordSpan">dtdSysID</span>(value.sysID);
-}
-if (value.nData != null) {
-  this.nData = this.stringify.dtdNData(value.nData);
-}
-if (this.pe &amp;&amp; this.nData) {
-  throw new Error("Notation declaration is not allowed in a parameter entity");
-}
+
+XMLDocType.prototype.element = function(name, value) {
+  var child;
+  child = new XMLDTDElement(this, name, value);
+  this.children.push(child);
 ...</pre></li>
     </ul>
 
