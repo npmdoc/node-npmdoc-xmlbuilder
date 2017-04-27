@@ -3243,7 +3243,24 @@
     return new XMLDocument(options);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+is not kept. There are a few drawbacks though. For example, traversing the document
+tree or adding attributes to a node after it is written is not possible. It is
+also not possible to remove nodes or attributes.
+
+``` js
+var result = '';
+
+builder.<span class="apidocCodeKeywordSpan">begin</span>(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').up()
+  .end();
+```
+
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+...</pre></li>
     </ul>
 
 
@@ -3700,7 +3717,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).attribute(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -3796,7 +3829,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).cdata(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -3892,7 +3941,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).comment(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4001,7 +4066,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).dtdAttList(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4080,7 +4161,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).dtdElement(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4197,7 +4294,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).dtdEntity(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4280,7 +4393,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).dtdNotation(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4365,7 +4494,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).declaration(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4517,21 +4662,22 @@ XMLDocType.prototype.pent = function(name, value) {
   return this.element(name, value);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-```
-
-### Usage:
+also not possible to remove nodes or attributes.
 
 ``` js
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-  .<span class="apidocCodeKeywordSpan">ele</span>('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-  .end({ pretty: true});
+var result = '';
 
-console.log(xml);
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .<span class="apidocCodeKeywordSpan">ele</span>('root')
+    .ele('xmlbuilder').up()
+  .end();
 ```
 
-will result in:
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+
+## [8.0.0] - 2016-03-25
 ...</pre></li>
     </ul>
 
@@ -4551,21 +4697,21 @@ will result in:
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-};
-
-XMLDocType.prototype.toString = function(options) {
-  return this.options.writer.set(options).docType(this);
-};
-
-XMLDocType.prototype.ele = function(name, value) {
-  return this.<span class="apidocCodeKeywordSpan">element</span>(name, value);
-};
-
-XMLDocType.prototype.att = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
-  return this.attList(elementName, attributeName, attributeType, defaultValueType, defaultValue);
-};
-
-XMLDocType.prototype.ent = function(name, value) {
+  module.exports.create = function(name, xmldec, doctype, options) {
+var doc, root;
+if (name == null) {
+  throw new Error("Root element needs a name");
+}
+options = assign({}, xmldec, doctype, options);
+doc = new XMLDocument(options);
+root = doc.<span class="apidocCodeKeywordSpan">element</span>(name);
+if (!options.headless) {
+  doc.declaration(options);
+  if ((options.pubID != null) || (options.sysID != null)) {
+    doc.doctype(options);
+  }
+}
+return root;
 ...</pre></li>
     </ul>
 
@@ -4728,7 +4874,23 @@ XMLDocType.prototype.up = function() {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).docType(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -4744,21 +4906,22 @@ XMLDocType.prototype.up = function() {
   return this.root() || this.documentObject;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  delete this.openTags[this.currentLevel];
-  this.currentLevel--;
-  return this;
-};
 
-XMLDocumentCB.prototype.end = function() {
-  while (this.currentLevel &gt;= 0) {
-    this.<span class="apidocCodeKeywordSpan">up</span>();
-  }
-  return this.onEnd();
-};
+``` js
+var result = '';
 
-XMLDocumentCB.prototype.openCurrent = function() {
-  if (this.currentNode) {
-    this.currentNode.children = true;
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').<span class="apidocCodeKeywordSpan">up</span>()
+  .end();
+```
+
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+
+## [8.0.0] - 2016-03-25
+- Added the `begin` export function. See the wiki for details.
 ...</pre></li>
     </ul>
 
@@ -4838,21 +5001,23 @@ XMLDocumentCB.prototype.openCurrent = function() {
   return writer.document(this);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-### Usage:
-
 ``` js
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-  .ele('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-  .<span class="apidocCodeKeywordSpan">end</span>({ pretty: true});
+var result = '';
 
-console.log(xml);
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').up()
+  .<span class="apidocCodeKeywordSpan">end</span>();
 ```
 
-will result in:
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
 
-``` xml
+## [8.0.0] - 2016-03-25
+- Added the `begin` export function. See the wiki for details.
+- Added the ability to add comments and processing instructions before and after the root element. Added `commentBefore`, `commentAfter
+`, `instructionBefore` and `instructionAfter` functions for this purpose.
 ...</pre></li>
     </ul>
 
@@ -4868,7 +5033,23 @@ will result in:
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).document(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -5248,7 +5429,23 @@ XMLComment.prototype.toString = function(options) {
     <li>description and source-code<pre class="apidocCodePre">dec = function (version, encoding, standalone) {
   return this.declaration(version, encoding, standalone);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tree or adding attributes to a node after it is written is not possible. It is
+also not possible to remove nodes or attributes.
+
+``` js
+var result = '';
+
+builder.begin(function(chunk) { result += chunk; })
+  .<span class="apidocCodeKeywordSpan">dec</span>()
+  .ele('root')
+    .ele('xmlbuilder').up()
+  .end();
+```
+
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+...</pre></li>
     </ul>
 
 
@@ -5271,21 +5468,20 @@ XMLComment.prototype.toString = function(options) {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      }
-      if (standalone != null) {
-        this.standalone = this.stringify.xmlStandalone(standalone);
-      }
+  if (name == null) {
+    throw new Error("Root element needs a name");
+  }
+  options = assign({}, xmldec, doctype, options);
+  doc = new XMLDocument(options);
+  root = doc.element(name);
+  if (!options.headless) {
+    doc.<span class="apidocCodeKeywordSpan">declaration</span>(options);
+    if ((options.pubID != null) || (options.sysID != null)) {
+      doc.doctype(options);
     }
-
-    XMLDeclaration.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">declaration</span>(this);
-    };
-
-    return XMLDeclaration;
-
-  })(XMLNode);
-
-}).call(this);
+  }
+  return root;
+};
 ...</pre></li>
     </ul>
 
@@ -5314,21 +5510,21 @@ XMLComment.prototype.toString = function(options) {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+  }
+  options = assign({}, xmldec, doctype, options);
+  doc = new XMLDocument(options);
+  root = doc.element(name);
+  if (!options.headless) {
+    doc.declaration(options);
+    if ((options.pubID != null) || (options.sysID != null)) {
+      doc.<span class="apidocCodeKeywordSpan">doctype</span>(options);
+    }
+  }
+  return root;
 };
 
-XMLDocumentCB.prototype.dec = function(version, encoding, standalone) {
-  return this.declaration(version, encoding, standalone);
-};
-
-XMLDocumentCB.prototype.dtd = function(root, pubID, sysID) {
-  return this.<span class="apidocCodeKeywordSpan">doctype</span>(root, pubID, sysID);
-};
-
-XMLDocumentCB.prototype.e = function(name, attributes, text) {
-  return this.element(name, attributes, text);
-};
-
-XMLDocumentCB.prototype.n = function(name, attributes, text) {
+module.exports.begin = function(options, onData, onEnd) {
+  var ref1;
 ...</pre></li>
     </ul>
 
@@ -5410,21 +5606,22 @@ XMLDocumentCB.prototype.attList = function(elementName, attributeName, attribute
   return this.element.apply(this, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-```
-
-### Usage:
+also not possible to remove nodes or attributes.
 
 ``` js
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-  .<span class="apidocCodeKeywordSpan">ele</span>('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-  .end({ pretty: true});
+var result = '';
 
-console.log(xml);
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .<span class="apidocCodeKeywordSpan">ele</span>('root')
+    .ele('xmlbuilder').up()
+  .end();
 ```
 
-will result in:
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+
+## [8.0.0] - 2016-03-25
 ...</pre></li>
     </ul>
 
@@ -5445,21 +5642,21 @@ will result in:
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-};
-
-XMLDocType.prototype.toString = function(options) {
-  return this.options.writer.set(options).docType(this);
-};
-
-XMLDocType.prototype.ele = function(name, value) {
-  return this.<span class="apidocCodeKeywordSpan">element</span>(name, value);
-};
-
-XMLDocType.prototype.att = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
-  return this.attList(elementName, attributeName, attributeType, defaultValueType, defaultValue);
-};
-
-XMLDocType.prototype.ent = function(name, value) {
+  module.exports.create = function(name, xmldec, doctype, options) {
+var doc, root;
+if (name == null) {
+  throw new Error("Root element needs a name");
+}
+options = assign({}, xmldec, doctype, options);
+doc = new XMLDocument(options);
+root = doc.<span class="apidocCodeKeywordSpan">element</span>(name);
+if (!options.headless) {
+  doc.declaration(options);
+  if ((options.pubID != null) || (options.sysID != null)) {
+    doc.doctype(options);
+  }
+}
+return root;
 ...</pre></li>
     </ul>
 
@@ -5479,21 +5676,23 @@ XMLDocType.prototype.ent = function(name, value) {
   return this.onEnd();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-### Usage:
-
 ``` js
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-  .ele('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-  .<span class="apidocCodeKeywordSpan">end</span>({ pretty: true});
+var result = '';
 
-console.log(xml);
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').up()
+  .<span class="apidocCodeKeywordSpan">end</span>();
 ```
 
-will result in:
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
 
-``` xml
+## [8.0.0] - 2016-03-25
+- Added the `begin` export function. See the wiki for details.
+- Added the ability to add comments and processing instructions before and after the root element. Added `commentBefore`, `commentAfter
+`, `instructionBefore` and `instructionAfter` functions for this purpose.
 ...</pre></li>
     </ul>
 
@@ -5574,7 +5773,27 @@ XMLDocType.prototype.not = function(name, value) {
     <li>description and source-code<pre class="apidocCodePre">ins = function (target, value) {
   return this.instruction(target, value);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Added the `begin` export function. See the wiki for details.
+- Added the ability to add comments and processing instructions before and after the root element. Added `commentBefore`, `commentAfter
+`, `instructionBefore` and `instructionAfter` functions for this purpose.
+- Dropped support for old node.js releases. Minimum required node.js version is now 4.0.
+
+## [7.0.0] - 2016-03-21
+- Processing instructions are now created as regular nodes. This is a major breaking change if you are using processing instructions
+. Previously processing instructions were inserted before their parent node. After this change processing instructions are appended
+ to the children of the parent node. Note that it is not currently possible to insert processing instructions before or after the
+ root element.
+```js
+root.ele('node').<span class="apidocCodeKeywordSpan">ins</span>('pi');
+// pre-v7
+&lt;?pi?&gt;&lt;node/&gt;
+// v7
+&lt;node&gt;&lt;?pi?&gt;&lt;/node&gt;
+```
+
+## [6.0.0] - 2016-03-20
+...</pre></li>
     </ul>
 
 
@@ -6096,21 +6315,22 @@ XMLDocumentCB.prototype.element = function(name, attributes, text) {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  delete this.openTags[this.currentLevel];
-  this.currentLevel--;
-  return this;
-};
 
-XMLDocumentCB.prototype.end = function() {
-  while (this.currentLevel &gt;= 0) {
-    this.<span class="apidocCodeKeywordSpan">up</span>();
-  }
-  return this.onEnd();
-};
+``` js
+var result = '';
 
-XMLDocumentCB.prototype.openCurrent = function() {
-  if (this.currentNode) {
-    this.currentNode.children = true;
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').<span class="apidocCodeKeywordSpan">up</span>()
+  .end();
+```
+
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+
+## [8.0.0] - 2016-03-25
+- Added the `begin` export function. See the wiki for details.
 ...</pre></li>
     </ul>
 
@@ -6367,7 +6587,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).element(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -6606,7 +6842,23 @@ XMLComment.prototype.toString = function(options) {
     <li>description and source-code<pre class="apidocCodePre">dec = function (version, encoding, standalone) {
   return this.declaration(version, encoding, standalone);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tree or adding attributes to a node after it is written is not possible. It is
+also not possible to remove nodes or attributes.
+
+``` js
+var result = '';
+
+builder.begin(function(chunk) { result += chunk; })
+  .<span class="apidocCodeKeywordSpan">dec</span>()
+  .ele('root')
+    .ele('xmlbuilder').up()
+  .end();
+```
+
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+...</pre></li>
     </ul>
 
 
@@ -6630,21 +6882,20 @@ XMLComment.prototype.toString = function(options) {
   return doc.root() || doc;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      }
-      if (standalone != null) {
-        this.standalone = this.stringify.xmlStandalone(standalone);
-      }
+  if (name == null) {
+    throw new Error("Root element needs a name");
+  }
+  options = assign({}, xmldec, doctype, options);
+  doc = new XMLDocument(options);
+  root = doc.element(name);
+  if (!options.headless) {
+    doc.<span class="apidocCodeKeywordSpan">declaration</span>(options);
+    if ((options.pubID != null) || (options.sysID != null)) {
+      doc.doctype(options);
     }
-
-    XMLDeclaration.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">declaration</span>(this);
-    };
-
-    return XMLDeclaration;
-
-  })(XMLNode);
-
-}).call(this);
+  }
+  return root;
+};
 ...</pre></li>
     </ul>
 
@@ -6696,21 +6947,21 @@ XMLComment.prototype.toString = function(options) {
   return doctype;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+  }
+  options = assign({}, xmldec, doctype, options);
+  doc = new XMLDocument(options);
+  root = doc.element(name);
+  if (!options.headless) {
+    doc.declaration(options);
+    if ((options.pubID != null) || (options.sysID != null)) {
+      doc.<span class="apidocCodeKeywordSpan">doctype</span>(options);
+    }
+  }
+  return root;
 };
 
-XMLDocumentCB.prototype.dec = function(version, encoding, standalone) {
-  return this.declaration(version, encoding, standalone);
-};
-
-XMLDocumentCB.prototype.dtd = function(root, pubID, sysID) {
-  return this.<span class="apidocCodeKeywordSpan">doctype</span>(root, pubID, sysID);
-};
-
-XMLDocumentCB.prototype.e = function(name, attributes, text) {
-  return this.element(name, attributes, text);
-};
-
-XMLDocumentCB.prototype.n = function(name, attributes, text) {
+module.exports.begin = function(options, onData, onEnd) {
+  var ref1;
 ...</pre></li>
     </ul>
 
@@ -6796,21 +7047,22 @@ return XMLDocument;
   return this.element(name, attributes, text);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-```
-
-### Usage:
+also not possible to remove nodes or attributes.
 
 ``` js
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-  .<span class="apidocCodeKeywordSpan">ele</span>('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-  .end({ pretty: true});
+var result = '';
 
-console.log(xml);
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .<span class="apidocCodeKeywordSpan">ele</span>('root')
+    .ele('xmlbuilder').up()
+  .end();
 ```
 
-will result in:
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+
+## [8.0.0] - 2016-03-25
 ...</pre></li>
     </ul>
 
@@ -6893,21 +7145,21 @@ will result in:
   return lastChild;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-};
-
-XMLDocType.prototype.toString = function(options) {
-  return this.options.writer.set(options).docType(this);
-};
-
-XMLDocType.prototype.ele = function(name, value) {
-  return this.<span class="apidocCodeKeywordSpan">element</span>(name, value);
-};
-
-XMLDocType.prototype.att = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
-  return this.attList(elementName, attributeName, attributeType, defaultValueType, defaultValue);
-};
-
-XMLDocType.prototype.ent = function(name, value) {
+  module.exports.create = function(name, xmldec, doctype, options) {
+var doc, root;
+if (name == null) {
+  throw new Error("Root element needs a name");
+}
+options = assign({}, xmldec, doctype, options);
+doc = new XMLDocument(options);
+root = doc.<span class="apidocCodeKeywordSpan">element</span>(name);
+if (!options.headless) {
+  doc.declaration(options);
+  if ((options.pubID != null) || (options.sysID != null)) {
+    doc.doctype(options);
+  }
+}
+return root;
 ...</pre></li>
     </ul>
 
@@ -6924,21 +7176,23 @@ XMLDocType.prototype.ent = function(name, value) {
   return this.document().end(options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-### Usage:
-
 ``` js
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-  .ele('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-  .<span class="apidocCodeKeywordSpan">end</span>({ pretty: true});
+var result = '';
 
-console.log(xml);
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').up()
+  .<span class="apidocCodeKeywordSpan">end</span>();
 ```
 
-will result in:
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
 
-``` xml
+## [8.0.0] - 2016-03-25
+- Added the `begin` export function. See the wiki for details.
+- Added the ability to add comments and processing instructions before and after the root element. Added `commentBefore`, `commentAfter
+`, `instructionBefore` and `instructionAfter` functions for this purpose.
 ...</pre></li>
     </ul>
 
@@ -7020,7 +7274,27 @@ will result in:
     <li>description and source-code<pre class="apidocCodePre">ins = function (target, value) {
   return this.instruction(target, value);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Added the `begin` export function. See the wiki for details.
+- Added the ability to add comments and processing instructions before and after the root element. Added `commentBefore`, `commentAfter
+`, `instructionBefore` and `instructionAfter` functions for this purpose.
+- Dropped support for old node.js releases. Minimum required node.js version is now 4.0.
+
+## [7.0.0] - 2016-03-21
+- Processing instructions are now created as regular nodes. This is a major breaking change if you are using processing instructions
+. Previously processing instructions were inserted before their parent node. After this change processing instructions are appended
+ to the children of the parent node. Note that it is not currently possible to insert processing instructions before or after the
+ root element.
+```js
+root.ele('node').<span class="apidocCodeKeywordSpan">ins</span>('pi');
+// pre-v7
+&lt;?pi?&gt;&lt;node/&gt;
+// v7
+&lt;node&gt;&lt;?pi?&gt;&lt;/node&gt;
+```
+
+## [6.0.0] - 2016-03-20
+...</pre></li>
     </ul>
 
 
@@ -7486,21 +7760,22 @@ XMLDocumentCB.prototype.element = function(name, attributes, text) {
   return this.parent;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  delete this.openTags[this.currentLevel];
-  this.currentLevel--;
-  return this;
-};
 
-XMLDocumentCB.prototype.end = function() {
-  while (this.currentLevel &gt;= 0) {
-    this.<span class="apidocCodeKeywordSpan">up</span>();
-  }
-  return this.onEnd();
-};
+``` js
+var result = '';
 
-XMLDocumentCB.prototype.openCurrent = function() {
-  if (this.currentNode) {
-    this.currentNode.children = true;
+builder.begin(function(chunk) { result += chunk; })
+  .dec()
+  .ele('root')
+    .ele('xmlbuilder').<span class="apidocCodeKeywordSpan">up</span>()
+  .end();
+```
+
+- Replaced native `Object.assign` with `lodash.assign` to support old JS engines.  See [#111](https://github.com/oozcitak/xmlbuilder
+-js/issues/111).
+
+## [8.0.0] - 2016-03-25
+- Added the `begin` export function. See the wiki for details.
 ...</pre></li>
     </ul>
 
@@ -7603,7 +7878,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).processingInstruction(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -7699,7 +7990,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).raw(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
@@ -7861,21 +8168,20 @@ XMLComment.prototype.toString = function(options) {
   return this.stream.write(this.endline(node));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      }
-      if (standalone != null) {
-        this.standalone = this.stringify.xmlStandalone(standalone);
-      }
+  if (name == null) {
+    throw new Error("Root element needs a name");
+  }
+  options = assign({}, xmldec, doctype, options);
+  doc = new XMLDocument(options);
+  root = doc.element(name);
+  if (!options.headless) {
+    doc.<span class="apidocCodeKeywordSpan">declaration</span>(options);
+    if ((options.pubID != null) || (options.sysID != null)) {
+      doc.doctype(options);
     }
-
-    XMLDeclaration.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">declaration</span>(this);
-    };
-
-    return XMLDeclaration;
-
-  })(XMLNode);
-
-}).call(this);
+  }
+  return root;
+};
 ...</pre></li>
     </ul>
 
@@ -8234,21 +8540,21 @@ XMLDocumentCB.prototype.up = function() {
   return this.stream.write(this.endline(node));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-};
-
-XMLDocType.prototype.toString = function(options) {
-  return this.options.writer.set(options).docType(this);
-};
-
-XMLDocType.prototype.ele = function(name, value) {
-  return this.<span class="apidocCodeKeywordSpan">element</span>(name, value);
-};
-
-XMLDocType.prototype.att = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
-  return this.attList(elementName, attributeName, attributeType, defaultValueType, defaultValue);
-};
-
-XMLDocType.prototype.ent = function(name, value) {
+  module.exports.create = function(name, xmldec, doctype, options) {
+var doc, root;
+if (name == null) {
+  throw new Error("Root element needs a name");
+}
+options = assign({}, xmldec, doctype, options);
+doc = new XMLDocument(options);
+root = doc.<span class="apidocCodeKeywordSpan">element</span>(name);
+if (!options.headless) {
+  doc.declaration(options);
+  if ((options.pubID != null) || (options.sysID != null)) {
+    doc.doctype(options);
+  }
+}
+return root;
 ...</pre></li>
     </ul>
 
@@ -8581,21 +8887,20 @@ XMLComment.prototype.toString = function(options) {
   return r;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      }
-      if (standalone != null) {
-        this.standalone = this.stringify.xmlStandalone(standalone);
-      }
+  if (name == null) {
+    throw new Error("Root element needs a name");
+  }
+  options = assign({}, xmldec, doctype, options);
+  doc = new XMLDocument(options);
+  root = doc.element(name);
+  if (!options.headless) {
+    doc.<span class="apidocCodeKeywordSpan">declaration</span>(options);
+    if ((options.pubID != null) || (options.sysID != null)) {
+      doc.doctype(options);
     }
-
-    XMLDeclaration.prototype.toString = function(options) {
-      return this.options.writer.set(options).<span class="apidocCodeKeywordSpan">declaration</span>(this);
-    };
-
-    return XMLDeclaration;
-
-  })(XMLNode);
-
-}).call(this);
+  }
+  return root;
+};
 ...</pre></li>
     </ul>
 
@@ -8948,21 +9253,21 @@ XMLDocumentCB.prototype.up = function() {
   return r;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-};
-
-XMLDocType.prototype.toString = function(options) {
-  return this.options.writer.set(options).docType(this);
-};
-
-XMLDocType.prototype.ele = function(name, value) {
-  return this.<span class="apidocCodeKeywordSpan">element</span>(name, value);
-};
-
-XMLDocType.prototype.att = function(elementName, attributeName, attributeType, defaultValueType, defaultValue) {
-  return this.attList(elementName, attributeName, attributeType, defaultValueType, defaultValue);
-};
-
-XMLDocType.prototype.ent = function(name, value) {
+  module.exports.create = function(name, xmldec, doctype, options) {
+var doc, root;
+if (name == null) {
+  throw new Error("Root element needs a name");
+}
+options = assign({}, xmldec, doctype, options);
+doc = new XMLDocument(options);
+root = doc.<span class="apidocCodeKeywordSpan">element</span>(name);
+if (!options.headless) {
+  doc.declaration(options);
+  if ((options.pubID != null) || (options.sysID != null)) {
+    doc.doctype(options);
+  }
+}
+return root;
 ...</pre></li>
     </ul>
 
@@ -10025,7 +10330,23 @@ this.children.forEach(function(child) {
     <li>description and source-code<pre class="apidocCodePre">toString = function (options) {
   return this.options.writer.set(options).text(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- Filtered out prototype properties when appending attributes. See [#31](https://github.com/oozcitak/xmlbuilder-js/issues/31).
+
+## [0.4.2] - 2012-09-14
+- Removed README.md from `.npmignore`.
+
+## [0.4.1] - 2012-08-31
+- Removed `begin()` calls in favor of `XMLBuilder` constructor.
+- Added the `end()` function. `end()` is a convenience over `doc().<span class="apidocCodeKeywordSpan">toString</span>()`.
+
+## [0.4.0] - 2012-08-31
+- Added arguments to `XMLBuilder` constructor to allow the name of the root element and XML prolog to be defined in one line.
+- Soft deprecated `begin()`.
+
+## [0.3.11] - 2012-08-13
+- Package keywords are fixed to be an array of values.
+...</pre></li>
     </ul>
 
 
