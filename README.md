@@ -1,6 +1,6 @@
 # npmdoc-xmlbuilder
 
-#### api documentation for  [xmlbuilder (v8.2.2)](http://github.com/oozcitak/xmlbuilder-js)  [![npm package](https://img.shields.io/npm/v/npmdoc-xmlbuilder.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-xmlbuilder) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-xmlbuilder.svg)](https://travis-ci.org/npmdoc/node-npmdoc-xmlbuilder)
+#### basic api documentation for  [xmlbuilder (v8.2.2)](http://github.com/oozcitak/xmlbuilder-js)  [![npm package](https://img.shields.io/npm/v/npmdoc-xmlbuilder.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-xmlbuilder) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-xmlbuilder.svg)](https://travis-ci.org/npmdoc/node-npmdoc-xmlbuilder)
 
 #### An XML builder for node.js
 
@@ -21,41 +21,56 @@
 ```json
 
 {
-    "name": "xmlbuilder",
-    "version": "8.2.2",
-    "keywords": [
-        "xml",
-        "xmlbuilder"
-    ],
-    "homepage": "http://github.com/oozcitak/xmlbuilder-js",
-    "description": "An XML builder for node.js",
-    "author": "Ozgur Ozcitak <oozcitak@gmail.com>",
-    "contributors": [],
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/oozcitak/xmlbuilder-js.git"
+    "author": {
+        "name": "Ozgur Ozcitak"
     },
     "bugs": {
         "url": "http://github.com/oozcitak/xmlbuilder-js/issues"
     },
-    "main": "./lib/index",
+    "contributors": [],
+    "dependencies": {},
+    "description": "An XML builder for node.js",
+    "devDependencies": {
+        "coffee-coverage": "*",
+        "coffee-script": "*",
+        "coveralls": "*",
+        "istanbul": "*",
+        "mocha": "*"
+    },
+    "directories": {},
+    "dist": {
+        "shasum": "69248673410b4ba42e1a6136551d2922335aa773",
+        "tarball": "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-8.2.2.tgz"
+    },
     "engines": {
         "node": ">=4.0"
     },
-    "dependencies": {},
-    "devDependencies": {
-        "coffee-script": "*",
-        "mocha": "*",
-        "coffee-coverage": "*",
-        "istanbul": "*",
-        "coveralls": "*"
+    "gitHead": "ab5987b12bc06e4da8c37cd7fec8f93085d96d28",
+    "homepage": "http://github.com/oozcitak/xmlbuilder-js",
+    "keywords": [
+        "xml",
+        "xmlbuilder"
+    ],
+    "license": "MIT",
+    "main": "./lib/index",
+    "maintainers": [
+        {
+            "name": "oozcitak"
+        }
+    ],
+    "name": "xmlbuilder",
+    "optionalDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/oozcitak/xmlbuilder-js.git"
     },
     "scripts": {
-        "prepublish": "coffee -co lib src",
         "postpublish": "rm -rf lib",
+        "prepublish": "coffee -co lib src",
         "test": "mocha && istanbul report text lcov"
-    }
+    },
+    "version": "8.2.2",
+    "bin": {}
 }
 ```
 
